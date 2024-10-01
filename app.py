@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
-from flask_pymongo import PyMongo
+# from flask_pymongo import PyMongo
 from pymongo.mongo_client import MongoClient
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -10,7 +10,7 @@ app.config["MONGO_URI"] = "mongodb+srv://yaswanthkumarmarella14:Yaswanth14@proje
 uri = "mongodb+srv://yaswanthkumarmarella14:Yaswanth14@project1.uhjhq.mongodb.net/?retryWrites=true&w=majority&appName=project1"
 app.secret_key = 'your_secret_key'  # Secret key for session management
 
-mongo = PyMongo(app)
+# mongo = PyMo  ngo(app)
 # users_collection = mongo.project1.eamcell  # Users collection in MongoDB
 
 client = MongoClient(uri)
@@ -73,7 +73,7 @@ def add_data():
         new_data = {'user': session['username'], 'item': 'Sample Item'}
 
         # Insert the data into MongoDB
-        mongo.db.items.insert_one(new_data)
+        db.faculty.insert_one(new_data)
 
         # Return success response
         return jsonify({'success': True, 'message': 'Data added to MongoDB!'})
