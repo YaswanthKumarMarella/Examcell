@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+		font-size:50px;
+        }
+        .search-container {
+		padding-right:300px;
+            text-align: right; /* Aligns the search bar to the right */
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            height: 40px; /* Increased height of the search bar */
+            padding: 5px;
+            font-size: 16px;
+        }
+        table {
+            width: 60%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Faculty List</h1>
+
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for faculty names..." onkeyup="filterTable()">
+    </div>
+
+    <table id="facultyTable">
+        <thead>
+            <tr>
+                <th>Serial No.</th>
+                <th>Faculty Name</th>
+                <th>Faculty ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><a href="fac_list.html">Prof. Ganesh</a></td>
+                <td><a href="fac_list.html">VLITS00</a>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><a href="fac_list.html">Prof. Yaswanth</a></td>
+                <td><a href="fac_list.html">VLITS002</a></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><a href="fac_list.html">Dr. Karthik</a></td>
+                <td><a href="fac_list.html">VLITS003</a></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><a href="fac_list.html">Dr. Siddarth</a></td>
+                <td><a href="fac_list.html">VLITS004</a></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><a href="fac_list.html">Dr. Dhanush</a></td>
+                <td><a href="fac_list.html">VLITS005</a></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function filterTable() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('facultyTable');
+            const tr = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < tr.length; i++) {
+                const td = tr[i].getElementsByTagName('td')[1];
+                if (td) {
+                    const txtValue = td.textContent || td.innerText;
+                    tr[i].style.display = txtValue.toLowerCase().indexOf(filter) > -1 ? "" : "none";
+                }       
+            }
+        }
+    </script>
+
+</body>
+</html>

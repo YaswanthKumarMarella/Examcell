@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .header img.logo {
+            max-width: 100px;
+            margin-bottom: 10px;
+        }
+
+        .header h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #333;
+        }
+
+        .signup-form input[type="text"],
+        .signup-form input[type="email"],
+        .signup-form input[type="password"],
+        .signup-form input[type="date"],
+        .signup-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .signup-form label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .signup-form .terms {
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .signup-form .terms a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .signup-form .signup-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .signup-form .signup-btn:hover {
+            background-color: #0056b3;
+        }
+
+        .social-signup p {
+            margin: 20px 0 10px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .social-btn {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .social-btn.google {
+            background-color: #db4437;
+            color: white;
+        }
+
+        .social-btn.facebook {
+            background-color: #3b5998;
+            color: white;
+        }
+
+        .footer p {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+        }
+
+        .footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="header">
+           
+            <h2>Create Your Account</h2>
+        </div>
+        
+        <form class="signup-form">
+            <input type="text" name="fullName" placeholder="Enter your full name" required>
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <input type="password" name="password" placeholder="Create a password" required>
+            <input type="password" name="confirmPassword" placeholder="Confirm your password" required>
+            
+            <input type="text" name="phone" placeholder="Enter your phone number (optional)">
+            <input type="date" name="dob" placeholder="Date of Birth (optional)">
+            
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender">
+                <option value="" disabled selected>Select your gender (optional)</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+                <option value="preferNotToSay">Prefer not to say</option>
+            </select>
+            
+            <div class="terms">
+                <input type="checkbox" name="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms and Conditions</a></label>
+            </div>
+            
+          <button onclick="window.location.href='login.html';" class="signup-btn">Sign Up</button>
+       </form>
+        
+    </div>
+</body>
+</html>
