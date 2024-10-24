@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block content %}
+<h1>upload .csv file to update the time table</h1>
+
+<form action="/updateTimeTable" method="post" enctype="multipart/form-data">
+    <input type="file" name="faculty" id="faculty" required accept=".csv">
+    <input type="submit" value="submit">
+</form>
+
+{% if message %}
+<h1> {{message}} </h1>
+{% endif %}
+
+{% endblock %}

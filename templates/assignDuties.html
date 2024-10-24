@@ -1,0 +1,73 @@
+{% extends "index.html" %}
+{% block head%}
+<style>
+    h3{
+        margin-bottom: 3px;
+    }
+    .tdata{
+        border: 1px solid black;
+        padding: 5px 20px;
+    }
+    table{
+        border-collapse: collapse;
+    }
+</style>
+{% endblock %}
+
+
+{% block content %}
+<h1> it assign invigilation duties </h1>
+
+<form action="/assignDuties" method="post">
+    <h3 ><b>select year</b></h3>
+    <select name="year" id="year">
+        <option value="1">1st year</option>
+        <option value="2">2st year</option>
+        <option value="3">3st year</option>
+        <option value="4">4st year</option>
+    </select>
+    <h3 ><b>select periods</b></h3>
+    <input type="radio" name="period" id="p1" value="1" required>
+    <label for="p1">Forenoon [1,2]</label><br>
+
+    <input type="radio" name="period" id="p2" value="2">
+    <label for="p2">Afternoon [5,6,7]</label><br>
+
+    <h3 ><b>select exam type</b></h3>
+    <select name="type" id="examtype">
+        <option value="assignment">assignment</option>
+        <option value="mid">mid</option>
+        <option value="sem">sem</option>
+        <option value="supply">supply</option>
+    </select>
+    
+    <h3> select day</h3>
+    <select name="day" id="select-day">
+        <option value="mon">monday</option>
+        <option value="tue">Tuesday</option>
+        <option value="wed">Wednesday</option>
+        <option value="thu">Thursday</option>
+        <option value="fri">Friday</option>
+        <option value="sat">Saturday</option>
+    </select>
+    
+    <br><br>
+    <input type="submit" value="get faculty">
+</form>
+
+
+{% if data %}
+ <div>
+    <table>
+    {% for fac in data %}
+    <tr>
+     {% for x in fac %}
+     <td class = "tdata"> {{x}}</td>
+     {% endfor %} 
+    </tr>
+    {% endfor %}
+</table>
+ </div>
+{% endif %}
+
+{% endblock %}

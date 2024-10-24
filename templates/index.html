@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %} {% endblock %}
+    <title>Examcell</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/assignDuties">Assign Duties</a></li>
+            <li><a href="/updateTimeTable">update time table</a></li>
+            <li><a href="/get-fac">faculty details</a></li>
+        </ul>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>
