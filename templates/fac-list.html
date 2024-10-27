@@ -13,15 +13,28 @@
 {% endblock %}
 
 {% block content %}
+<div class="table-container">
 <table>
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>day</th>
+            <th>1st hr</th>
+            <th>2nd hr</th>
+            <th>3rd hr</th>
+            <th>4th hr</th>
+        </tr>
+    </thead>
+<tbody>
 {% for row in data %}
 <tr >
 {% for col in row %}
 <td class="tdata"> {{col}}</td>
 {% endfor %}
-
 {% endfor %}
 </tr>
+</tbody>
+</table>
+</div>
 {% endblock %}
 
-</table>

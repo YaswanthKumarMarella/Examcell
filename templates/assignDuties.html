@@ -18,13 +18,13 @@
 {% block content %}
 <h1> it assign invigilation duties </h1>
 
-<form action="/assignDuties" method="post">
+<form action="/assignDuties" method="post" style="margin-bottom:2rem;">
     <h3 ><b>select year</b></h3>
     <select name="year" id="year">
-        <option value="1">1st year</option>
-        <option value="2">2st year</option>
-        <option value="3">3st year</option>
-        <option value="4">4st year</option>
+        <option value="I">1st year</option>
+        <option value="II">2st year</option>
+        <option value="III">3st year</option>
+        <option value="IV">4st year</option>
     </select>
     <h3 ><b>select periods</b></h3>
     <input type="radio" name="period" id="p1" value="1" required>
@@ -57,8 +57,19 @@
 
 
 {% if data %}
- <div>
+ <div class="table-container">
     <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>day</th>
+                <th>1st hr</th>
+                <th>2nd hr</th>
+                <th>3rd hr</th>
+                <th>4th hr</th>
+            </tr>
+        </thead>
+
     {% for fac in data %}
     <tr>
      {% for x in fac %}
