@@ -42,32 +42,28 @@ text-align:center;
 <h1> Available Faculty </h1>
 
 {% if data %}
- <div class="table-container">
-    <table>
+ <div style="margin: 1rem;">
+    <table class="assign-duties-form">
         <thead>
             <tr>
-                <th>choose</th>
+                <th>id</th>
                 <th>name</th>
-                <th>day</th>
-                
             </tr>
         </thead>
-
-    {% for fac in data %}
-    <tr> 
-        <td class = "tdata wid">
-         <input type="checkbox" class="chkbox">
-        </td>
-     {% for x in fac[0:2] %}
-
-     <td class = "tdata col1"> {{x}}</td>
-     {% endfor %} 
-    </tr>
-    {% endfor %}
-</table>
+        <tbody>
+            {% for fac in data %}
+            <tr>
+                {% for col in fac %}
+                <td class="tdata"> {{col}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+    
+        </tbody>
+    </table>
  </div>
 {% endif %} 
-<div class="cen">
+<div class="cen dp">
 
 <button class="print-button " onclick="printPage()">Print</button>
 </div>

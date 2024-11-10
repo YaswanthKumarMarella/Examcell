@@ -52,7 +52,7 @@
             text-transform: capitalize;
         }
 
-        form {
+        .assign-duties-form {
             background: white;
             padding: 2rem;
             border-radius: 8px;
@@ -60,6 +60,14 @@
             max-width: 600px;
             margin: 0 auto;
         }
+        form {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin: 0 auto;
+        }
+
 
         h3 {
             color: #2d3748;
@@ -206,6 +214,24 @@
             td, th {
                 padding: 0.75rem;
             }
+        }
+
+        @media print{
+            nav{
+                display: none;
+            }
+            .dp{
+                display: none;
+            }
+            th{
+                border: 1px solid black;
+            }
+        }
+        .btn-primary{
+            width: 200px; 
+            display: block; 
+            margin:auto; 
+            margin-top: 1rem;
         }
     </style>
     {% block head %} {% endblock %}

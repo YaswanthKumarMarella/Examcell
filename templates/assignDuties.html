@@ -25,9 +25,9 @@
 
 
 {% block content %}
-<h1> it assign invigilation duties </h1>
+<h1 style="text-align:center;">assign invigilation duties </h1>
 
-<form action="/assignDuties" method="post" style="margin-bottom:2rem;">
+<form action="/assignDuties" method="post" style="margin-bottom:2rem;" class="assign-duties-form">
     <h3 ><b>select year</b></h3>
     <select name="year" id="year">
         <option value="I">1st year</option>
@@ -67,31 +67,40 @@
 
 {% if data %}
  <div class="table-container">
+    <form action="select-fac" method="post">
     <table>
         <thead>
             <tr>
-                <th>choose</th>
+                <th>select</th>
+                <th>id</th>
                 <th>name</th>
                 <th>day</th>
                 <th>1st hr</th>
                 <th>2nd hr</th>
                 <th>3rd hr</th>
                 <th>4th hr</th>
+                <th>5th hr</th>
+                <th>6th hr</th>
+                <th>7th hr</th>
             </tr>
         </thead>
 
     {% for fac in data %}
-    <tr> 
-        <td class = "tdata wid">
-         <input type="checkbox" class="chkbox">
-        </td>
+    <tr>
+     <td class="tdata"> <input type="checkbox" value="{{fac[0]}}" name="fac-id"></td>
      {% for x in fac %}
      <td class = "tdata"> {{x}}</td>
      {% endfor %} 
     </tr>
     {% endfor %}
 </table>
+<input type="submit" value="submit" style="width: 200px; display: block; margin:auto; margin-top: 1rem;">
+</form>
  </div>
+{% endif %}
+
+{% if message %}
+<h1 style="text-align:center;"> {{message}} </h1>
 {% endif %}
 
 {% endblock %}
