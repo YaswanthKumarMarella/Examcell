@@ -19,7 +19,7 @@ def postAssignDuties():
     col_names = ['name', 'day', '1','2','3','4']
     pd = pandas.read_csv('faculty.csv', names =col_names, header= None)
     x = pd[(pd['day'] == form['day'])&(pd['2'].isin([form['year'], '0'])) &(pd['1'].isin(['0', form['year']]))]
-    return render_template("assignDuties.html", data = x.values.tolist())
+    return render_template("free.html", data = x.values.tolist())
 
 
 @app.route("/updateTimeTable")

@@ -11,6 +11,15 @@
     table{
         border-collapse: collapse;
     }
+    .chkbox{
+        height:25px;
+        width:25px;
+        margin:10px;
+    }
+    .wid {
+        width:15px;
+
+    }
 </style>
 {% endblock %}
 
@@ -61,6 +70,7 @@
     <table>
         <thead>
             <tr>
+                <th>choose</th>
                 <th>name</th>
                 <th>day</th>
                 <th>1st hr</th>
@@ -71,7 +81,10 @@
         </thead>
 
     {% for fac in data %}
-    <tr>
+    <tr> 
+        <td class = "tdata wid">
+         <input type="checkbox" class="chkbox">
+        </td>
      {% for x in fac %}
      <td class = "tdata"> {{x}}</td>
      {% endfor %} 
